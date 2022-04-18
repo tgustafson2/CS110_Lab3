@@ -1,0 +1,265 @@
+/* Feel free to edit CSS of body if you'd like. We provide you the light gray background color and font family in the body styling */
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  background-color: #e6ecf0;
+}
+
+/* TODO: Create CSS for your Twitter Mockup */
+
+/* ---- */
+#JUMP {
+  display: none;
+  position: absolute;
+  top: 50px;
+  padding: 5px;
+  background-color: white;
+}
+/* ---- */
+.navbar-logo{
+  position: absolute;
+  /*width:;*/
+  left:0;
+  top:0;
+  text-align: center;
+  margin:auto;
+}
+#header{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#logo{
+  justify-content: center;
+}
+.navbar-brand{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.navbar-custom:hover{
+  color: lightskyblue !important;
+  text-decoration: underline;
+  text-decoration-color: lightskyblue;
+ 
+}
+
+@media only screen and (max-width:1600px) {
+  .size-ad{
+    display: none !important;
+  }
+}
+@media only screen and (min-width:1600px) {
+  .size-sm{
+    display: none !important;
+  }
+}
+
+.badge{
+  align-items: center;
+  height: 40px;
+  width: 1px;
+  justify-content: center;
+  text-align:center;
+  justify-content:center;
+  display: flex;
+  font-weight: 100;
+  font-size: 1.25rem;
+  background: lightskyblue;
+}
+/* --- VVV Container CSS VVV --- */
+
+.container {
+  max-width: 1190px;
+  margin: 70px auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+/* ----Content-LEFT---- */
+.content-left {
+  width: 290px;
+  background-color: white;
+  flex-direction: column;
+}
+
+
+#User-Profile-Banner {
+  display: flex;
+  /*position: relative;*/
+  width: 290px;
+  justify-content: center;
+  background-color: black;
+
+}
+#User-Profile-Banner img{
+  width: 65%;
+  align-self: center;
+  padding: 12% 0 12% 0;
+}
+
+.User-Profile-Card {
+  position: relative;
+  margin-top: -9%;
+  display: flex;
+  flex-direction: row;
+}
+
+.UPC-PFP {
+  width: 30%;
+}
+
+.UPC-PFP img{
+  position: relative;
+  border-radius: 50%;
+  width: 100%;
+  z-index: 5;
+  margin: auto 10% auto 10%;
+  border: 2px solid white;
+}
+
+.UPC-UsrTag {
+  width: 70%;
+  margin: 10% auto auto 10%;
+  align-self: center;
+}
+
+.User-Profile-Card h3, p{
+  margin: 0;
+}
+
+.User-Profile-Card h3 {
+  display: block;
+  font-size: 1.17em;
+  font-weight: bold;
+}
+
+.User-Profile-Card p{
+  color: grey;
+}
+
+#User-Profile-Stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.UPC-Stat h4{
+  font-size: large;
+  font-weight: bolder;
+  color: #888;
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
+.UPC-Stat p{
+  font-size: larger;
+  font-weight: bolder;
+  color: #4AB3F4;
+  margin-bottom: 30%;
+}
+
+/* ----Content-RIGHT----*/
+
+.content-right {
+  min-width: 290px;
+  background-color: white;
+}
+
+.content-right h2 {
+  margin: 5% auto 0% 5%;
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.content-right strong {
+  font-weight: bold;
+}
+
+.profile-card {
+  padding-bottom: 5%;
+  margin: 0% 5% 5% 5%;
+  display: flex;
+  border-bottom: 1px solid #e6ecf0;
+}
+
+div.profile-card-pfp{
+  display: flex;
+  align-self: center;
+  margin-right: 5%;
+}
+
+.Follow-Button {
+  padding: 3%; 
+  width: 75px;
+  position: relative;
+  border: 2px solid #4AB3F4;
+  border-radius: 25px;
+  text-align: center;
+  font-weight: bold;
+  color: #4AB3F4
+}
+
+/* ----Content-MAIN---- */
+
+.content-center {
+  background-color: white;
+  margin: 0% 2% 0% 2%;
+}
+
+.tweet {
+  border-bottom: 2px solid #e6ecf0;
+  min-height: 51px;
+  display: flex;
+  padding: 2%;
+}
+
+.usr-pfp img{
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+
+.usertag {
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.usertag i {
+  font-style: normal;
+  color: #AAA;
+  font-weight: 100;
+}
+
+.tweet-content {
+  margin-left: 2%;
+}
+
+.tweet-content h4 {
+  margin: 0 0 10px 0;
+}
+
+.tweet-content p{
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+/* --- Media Queries --- */
+@media screen and (max-width: 1200px) {
+  .content-left {
+    margin-left: 2%;
+  }
+
+  .content-right {
+    display: none;
+  }
+}
