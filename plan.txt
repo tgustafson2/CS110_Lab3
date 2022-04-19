@@ -1,0 +1,25 @@
+function to ping server for results, set on interval
+function to check if duplicate tweets and remove from pinged results
+    > do tweets have IDs? yes
+data structure for results
+    > list of JSONs?
+function to pause update pings
+    > button? Kill timer?
+    >   pausePing(){
+    >      clearInterval(...)
+    >       ...
+    >       }
+function to filter already provided results
+    > how does it know how to filter?
+    > there exist an event listener for 'input'
+    >   could use this for search bar
+    >   i.e. document.getElementbyID("search-bar").addEventListerner('input', ...)
+    > should append nonDup tweets directly to html?
+Do the tweets need formatting from the JSON?
+
+TO-DO:
+! Implement  interval that will call fetch
+!   > And pause button
+! Implement  tweets.filter(...) to remove duplicates
+! Implement  tweets.filter(...)
+! Implement  tweets.sort(...)/filteredResult.sort(...);
