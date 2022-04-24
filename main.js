@@ -8,7 +8,8 @@ function tweetstruct(text, id, creation){
 let tweetsID=[];
     let dupsCulled = 0;
 let tweetscont=[];
-let queriedTweets=[];
+    //tweetscont.filter = filter;
+//let queriedTweets=[];
 //let tweets = [];
 function getTweets(){
     console.log("ENTERED GETtWEETS()");
@@ -17,12 +18,12 @@ function getTweets(){
     // do something with data
         for( let i=0; i < Object.keys(data.statuses).length; i++){
             if( isDuplicate(data.statuses[i].id) ){
-                tweetscont.push(tweetstruct(data.statuses[i].text, data.statuses[i].id, data.statuses[i].created_at));
+                tweetscont.push(new tweetstruct(data.statuses[i].text, data.statuses[i].id, data.statuses[i].created_at));
                 console.log(data.statuses[i].text, data.statuses[i].id, data.statuses[i].created_at);
             }
             
         }
-        //refreshTweets(tweetscont);
+        refreshTweets(tweetscont);
     })
     .catch(err => {
         // error catching
@@ -39,10 +40,12 @@ window.onload=function(){
 let searchString = "" // here we use a global variable
 
 const handleSearch = event => {
+    //needs work ############################
      //searchString = event.target.value.trim().toLowerCase()
      // you may want to update the displayed HTML here too
      console.log("Boop");
 }
+
 document.getElementById("searchBar").addEventListener("input", handleSearch);
 
 const tweetContainer = document.getElementById('tweet-container');
@@ -120,4 +123,23 @@ function toggleFeed(feed){
     feed.active = !feed.active;
     console.log(`Toggle Feed -> [${feed.active}] \t- (${feed.interval})`);
     document.getElementById('Feed_Button').innerText = (feed.active) ? "ii": ">";
+}
+
+tweetscont.filter = function(){
+    let filteredTweets = [];
+    filteredTweets.sort = sort;
+
+    for(let i = 0; i < this.length; ++i){
+        if(this[i].text.includes(searchString))
+            filteredTweets.push(this[i]);
+    }
+    //done?##############
+    return filteredTweets;
+}
+
+function sort() {
+    //needs work ################
+    console.log("Bye - Sort");
+
+    return this;
 }
