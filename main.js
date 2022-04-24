@@ -36,7 +36,7 @@ window.onload=function(){
 }
 setInterval(getTweets,10000);
 
-let searchString = " " // here we use a global variable
+let searchString = "" // here we use a global variable
 
 // const handleSearch = event => {
 //     searchString = event.target.value.trim().toLowerCase()
@@ -50,7 +50,7 @@ function filteringFunc(arr, query){
     return arr;
 }
 function sortTime (a,b){
-    return a.creation - b.creation;
+    return Date.parse(a.creation) - Date.parse(b.creation);
 }
 
 const tweetContainer = document.getElementById('tweet-container');
@@ -95,8 +95,12 @@ function refreshTweets(tweets) {
         // create a text node "safely" with HTML characters escaped
         // {@link https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode}
         const tweetText = document.createTextNode(tweetObject.text);
+        const tweetTime = document.createTextNode("Date: "+ tweetObject.creation+"\t");
+        const tweetID = document.createTextNode("ID: "+tweetObject.id+"\t");
         console.log(tweetObject.text);
         // append the text node to the div
+        tweetContent.appendChild(tweetTime);
+        tweetContent.appendChild(tweetID);
         tweetContent.appendChild(tweetText);
 
         // you may want to put more stuff here like time, username...
