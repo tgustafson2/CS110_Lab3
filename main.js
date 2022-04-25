@@ -31,18 +31,21 @@ function removeDup(a){
     return true;
 }
 
+var feed = { interval: 0, active: true };
 window.onload=function(){
-    setInterval(getTweets(),10000)
+    getTweets();
+    feed.interval = setInterval(getTweets,10000);
+    feed.active = true;
 }
-setInterval(getTweets,10000);
 
 let searchString = "" // here we use a global variable
 
-// const handleSearch = event => {
-//     searchString = event.target.value.trim().toLowerCase()
-//     // you may want to update the displayed HTML here too
-// }
-// document.getElementById("searchBar").addEventListener("input", handleSearch);
+const handleSearch = event => {
+    searchString = event.target.value.trim().toLowerCase()
+    refreshTweets(tweetscont);
+    // you may want to update the displayed HTML here too
+}
+document.getElementById("searchBar").addEventListener("input", handleSearch);
 function filteringFunc(arr, query){
     if(query!==""){
         return arr.filter(el => el.text.toLowerCase().indexOf(query.toLowerCase()) !== -1)
@@ -110,4 +113,14 @@ function refreshTweets(tweets) {
         tweetList.appendChild(tweet);
     });
 }
+function toggleFeed(feed){
+    if(feed.active)
+        clearInterval(feed.interval);
+    else{
+        feed.interval = setInterval(getTweets, 10000);   
+    }
 
+    feed.active = !feed.active;
+    console.log(`Toggle Feed -> [${feed.active}] \t- (${feed.interval})`);
+    document.getElementById('Feed_Button').innerText = (feed.active) ? "ii": ">";
+}
